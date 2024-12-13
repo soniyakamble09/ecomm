@@ -1,0 +1,51 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"/>
+</head>
+<body>    
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 shadow mt-4 p-4 mx-auto">
+            <h3 align="center">Registration</h3>
+            {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+            {% endif %}
+            <form method="POST" action="/register">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="uemail"><strong>Username: </strong></label>
+                    <input type="text" class="form-control" name="uemail" id="uemail" placeholder="Enter Email address">
+                </div>
+                <div class="mb-3">
+                    <label for="upass"><strong>Password: </strong></label>
+                    <input type="password" class="form-control" name="upass" id="upass" placeholder="Enter Password">
+                </div>
+                <div class="mb-3">
+                    <label for="cpass"><strong>Confirm Password: </strong></label>
+                    <input type="password" class="form-control" name="cpass" id="cpass" placeholder="Confirm Password">
+                </div>
+                <div class="mb-3">
+                    <!-- <button type="submit" class="btn btn-warning mb-3">Register</button> -->
+                    <input type="submit" class="btn btn-danger" />
+                    Already User? <a href="/login">Login</a>
+                </div>
+            </form>
+            {% if success %}
+                <div class="alert alert-success">
+                    {{success}}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+ </div>
+
+ <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

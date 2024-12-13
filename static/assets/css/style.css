@@ -1,0 +1,26 @@
+.anchor {
+    text-decoration: none;
+}
+
+.custom-col {
+    width: 30%;
+    height: 300px; 
+  }
+  
+  @media (max-width: 768px) {
+    .custom-col {
+      width: 100%; /* Full width on smaller screens */
+      height: auto; /* Adjust height */
+    }
+  }
+  
+  .narrow-input {
+    width: 60px;
+    text-align: center;
+    padding-left: 1px;
+  }
+
+  .right-align {
+    float: right !important;
+  }
+  
